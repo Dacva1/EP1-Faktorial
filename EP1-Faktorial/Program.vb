@@ -9,15 +9,21 @@ Module Program
         Console.WriteLine("Zadej èíslo: ")
         vstup = Console.ReadLine
 
-
-        If Integer.TryParse(vstup, cislo) Then
-            For i = 1 To cislo
-                soucet = soucet + i
-            Next
-            Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+        If vstup < 10 Then
+            If Integer.TryParse(vstup, cislo) Then
+                For i = 1 To cislo
+                    soucet = soucet + i
+                Next
+                Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+            Else
+                Console.WriteLine("Chyba musíte zadat jen celá èísla")
+            End If
         Else
-            Console.WriteLine("Chyba musíte zadat jen celé èísla")
+            Console.WriteLine("Zadali jste moc velkou hodnotu.")
         End If
+
+
+
 
 
     End Sub
