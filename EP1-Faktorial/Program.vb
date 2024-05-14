@@ -6,27 +6,27 @@ Module Program
         Dim soucet As Integer = 0
         Dim cislo As Integer
 
-        Console.WriteLine("Zadej èíslo: ")
-        vstup = Console.ReadLine
+        Do
+            Console.WriteLine("Zadej èíslo: ")
+            vstup = Console.ReadLine
 
-
-        If vstup > 0 Then
-            If vstup < 10 Then
-                If Integer.TryParse(vstup, cislo) Then
-                    For i = 1 To cislo
-                        soucet = soucet + i
-                    Next
-                    Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+            If vstup > 0 Then
+                If vstup < 10 Then
+                    If Integer.TryParse(vstup, cislo) Then
+                        For i = 1 To cislo
+                            soucet = soucet + i
+                        Next
+                        Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+                    Else
+                        Console.WriteLine("Chyba musíte zadat jen celá èísla")
+                    End If
                 Else
-                    Console.WriteLine("Chyba musíte zadat jen celá èísla")
+                    Console.WriteLine("Zadali jste moc velkou hodnotu.")
                 End If
             Else
-                Console.WriteLine("Zadali jste moc velkou hodnotu.")
+                Console.WriteLine("Nelze poèítat se zápornými èísly")
             End If
-        Else
-            Console.WriteLine("Nelze poèítat se zápornýmý èísly")
-        End If
-
+        Loop
 
 
 
