@@ -13,5 +13,6 @@ Module Program
         Next
 
         Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+
     End Sub
 End Module
